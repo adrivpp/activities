@@ -2,5 +2,7 @@
 
 export default {
   activities: [],
-  activitiesInCart: []
+  activitiesInCart: [],
+  cartCounter: 0,
+  favCounter: 0
 };

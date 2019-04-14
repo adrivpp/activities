@@ -6,6 +6,7 @@ export default {
   },
   addToCart: (state, activity) => {
     state.activitiesInCart.push(activity)
+    state.cartCounter++
   }
 }
 ;
