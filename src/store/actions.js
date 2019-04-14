@@ -10,4 +10,7 @@ export default {
       })
       .catch(err => console.log(err));
   },
+  addActivity: ({ commit }, activity) => {
+    commit('addToCart', activity)
+  }
 };
