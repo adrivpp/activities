@@ -3,11 +3,18 @@
     <div id="nav">
       <router-link to="/">Activities</router-link>  
       <div class="icons">
-        <i class="fas fa-shopping-bag">
-          <Badge :counter="cartCounter"/>
+        <i class="fas fa-shopping-bag" @click="toggleShow">
+          <Badge :counter="activitiesInCart.length"/>
         </i>     
         <i class="fas fa-star"></i>
       </div>
+    </div>
+    <div class="cart-elements-container" v-if="isCartShown && activitiesInCart.length">
+      <CartActivitiesCard 
+      v-for="(activity, index) in activitiesInCart"
+      :activity="activity"
+      :key="index"      
+      />
     </div>
     <router-view/>
   </div>
@@ -16,18 +23,27 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 import Badge from '@/components/Badge'
+import CartActivitiesCard from '@/components/CartActivitiesCard'
 
 export default {
   name: 'app',
   data() {
-    return {}
+    return {
+      isCartShown: false
+    }
+  },
+  methods: {
+    toggleShow() {      
+      this.isCartShown = !this.isCartShown     
+    }
   },
   components: {
-    Badge,    
+    Badge,   
+    CartActivitiesCard
   },  
   computed: {
     ...mapState([
-      'cartCounter'
+      'activitiesInCart'
     ])
   }
 };

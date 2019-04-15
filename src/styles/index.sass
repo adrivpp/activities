@@ -1,6 +1,7 @@
 @import 'base/variables'
 @import 'components/activities'
 @import 'components/activities-card'
+@import 'components/_cart-activities-card'
 
 #app 
   font-family: 'Roboto','Helvetica','Arial',sans-serif
@@ -15,6 +16,7 @@
   display: flex
   justify-content: space-between
   align-items: center
+  position: relative
   & a 
     font-weight: bold
     color: $black
@@ -26,11 +28,12 @@
 
 .fas 
   position: relative
+  color: #242424
 
 .badge p
   position: absolute
   border-radius: 100%
-  background-color: #242424
+  background-color: #2C95C2
   top: -20px
   left: 5px
   width: 12px
