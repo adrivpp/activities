@@ -1,46 +1,34 @@
+/* eslint-disable */
+
 <template>
-  <button @click="handleClick" :disabled="isDisaled">
-    {{ text }}
+  <button @click="handleClick" :disabled="isActivityInCart(activity)">
+    {{ isActivityInCart(activity) ? 'In cart' : 'Add To cart' }}
   </button>    
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
+import { constants } from 'crypto';
 
 export default {
-  name: 'addActivityButton',
-  data() {
-    return {
-      isInCart: false,
-      text: 'Add to cart',
-      isDisaled: false
-    }
-  }, 
+  name: 'addActivityButton',  
   props: {
     activity: Object
   },
   methods: {
     ...mapActions([
       'addActivity'
-    ]),
-    checkActivitiesInCart() {
-      this.isInCart = this.activitiesInCart.some((activity) => {
-        return activity.title === this.activity.title
-      })      
-    },    
+    ]),             
     handleClick() {
-      this.addActivity(this.activity)
-      this.checkActivitiesInCart()
-      if (this.isInCart) {
-        this.text = 'In cart',
-        this.isDisaled = true
-      }
+      this.addActivity(this.activity)      
     }
   },  
   computed: {
-    ...mapState([
-      'activitiesInCart'
+    ...mapGetters([
+      'isActivityInCart'
     ]),    
-  }
-};
+  },
+}
+    
+
 </script>

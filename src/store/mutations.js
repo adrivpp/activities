@@ -6,6 +6,11 @@ export default {
   },
   addToCart: (state, activity) => {
     state.activitiesInCart.push(activity)    
-  }
+  },
+  removeFromCart: (state, activity) => {
+    state.activitiesInCart = state.activitiesInCart.filter((act) => {
+      return act !== activity
+    })     
+  },
 }
 ;

@@ -12,5 +12,8 @@ export default {
   },
   addActivity: ({ commit }, activity) => {
     commit('addToCart', activity)
-  }
+  },
+  deleteActivity: ({ commit }, activity) => {
+    commit('removeFromCart', activity)
+  },
 };
