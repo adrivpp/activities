@@ -8,4 +8,11 @@ export default {
       })    
     }
   },
+  isActivityInFavorites(state) {
+    return activity => {
+      return state.activitiesInFavorites.some((act) => {
+        return act.title === activity.title
+      })    
+    }
+  },
 }

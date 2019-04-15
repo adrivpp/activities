@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 <template>
   <button @click="handleClick" :disabled="isActivityInCart(activity)">
     {{ isActivityInCart(activity) ? 'In cart' : 'Add To cart' }}
@@ -8,7 +6,6 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { constants } from 'crypto';
 
 export default {
   name: 'addActivityButton',  
@@ -28,7 +25,6 @@ export default {
       'isActivityInCart'
     ]),    
   },
-}
-    
+}    
 
 </script>

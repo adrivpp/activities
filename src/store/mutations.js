@@ -12,5 +12,12 @@ export default {
       return act !== activity
     })     
   },
-}
-;
+  addToFavorites: (state, activity) => {
+    state.activitiesInFavorites.push(activity)       
+  },
+  removeFromFavorites: (state, activity) => {
+    state.activitiesInFavorites = state.activitiesInFavorites.filter((act) => {
+      return act !== activity
+    })         
+  }
+};

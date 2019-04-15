@@ -3,4 +3,5 @@
 export default {
   activities: [],
   activitiesInCart: [],  
+  activitiesInFavorites: []
 };

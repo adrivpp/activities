@@ -16,4 +16,10 @@ export default {
   deleteActivity: ({ commit }, activity) => {
     commit('removeFromCart', activity)
   },
+  addToFavorites: ({ commit }, activity) => {
+    commit('addToFavorites', activity)
+  },
+  removeFromFavorites: ({ commit }, activity) => {
+    commit('removeFromFavorites', activity)
+  },
 };

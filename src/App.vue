@@ -6,7 +6,9 @@
         <i class="fas fa-shopping-bag" @click="toggleShow">
           <Badge :counter="activitiesInCart.length"/>
         </i>     
-        <i class="fas fa-star"></i>
+        <i class="fas fa-star">
+          <Badge :counter="activitiesInFavorites.length"/>
+        </i>
       </div>
     </div>
     <div class="cart-elements-container" v-if="isCartShown && activitiesInCart.length">
@@ -43,7 +45,8 @@ export default {
   },  
   computed: {
     ...mapState([
-      'activitiesInCart'
+      'activitiesInCart',
+      'activitiesInFavorites'
     ])
   }
 };
